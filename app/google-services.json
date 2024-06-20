@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "198025850658",
+    "project_id": "ventas-motos",
+    "storage_bucket": "ventas-motos.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:198025850658:android:4011a5bd0a06c88822ff7b",
+        "android_client_info": {
+          "package_name": "com.example.motofast"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDaRGNldh4hGf_irQN8pA6-hEDeSD_iUj0"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
