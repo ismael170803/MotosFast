@@ -26,17 +26,18 @@ class RecordarPassActivity : AppCompatActivity() {
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom)
             insets
         }
-        val txtmail: TextView = findViewById(R.id.txtEmailCambio)
-        val btnCambiar: Button = findViewById(R.id.btnCambiar)
+        val txtmail : TextView = findViewById(R.id.txtEmailCambio)
+        val btnCambiar : Button = findViewById(R.id.btnCambiar)
         btnCambiar.setOnClickListener()
         {
             sendPasswordReset(txtmail.text.toString())
         }
         firebaseAuth = Firebase.auth
     }
-    private fun sendPasswordReset(email: String) {
+    private fun sendPasswordReset (email: String)
+    {
         firebaseAuth.sendPasswordResetEmail(email)
-            .addOnCompleteListener() { task ->
+            .addOnCompleteListener(){ task ->
                 if (task.isSuccessful)
                 {
                     Toast.makeText(baseContext,"Verificación Enviado Correctamente", Toast.LENGTH_SHORT).show()
@@ -48,5 +49,6 @@ class RecordarPassActivity : AppCompatActivity() {
                     Toast.makeText(baseContext,"Error, no se pudo verificar el Correo", Toast.LENGTH_SHORT).show()
                 }
             }
+
     }
 }
