@@ -2,7 +2,14 @@
     <string name="app_name">Moto Fast</string>
     <string name="title_home">Inicio</string>
     <string name="title_dashboard">Tablero</string>
-    <string name="title_notifications">Notificaciones</string>
+    <string name="title_notifications">Sobre Nosostros</string>
     <string name="strCrear_Cuenta"><u>Crea tu Cuenta Aquí</u></string>
     <string name="strOlvidar"><u>Recordar Contraseña</u></string>
+    <string name="id_producto">ID del Producto</string>
+    <string name="n_producto">Nombre del Producto</string>
+    <string name="p_producto">Precio del Producto</string>
+    <string name="ID">Id del Producto</string>
+    <string name="Nombre">Nombre del Producto</string>
+    <string name="Precio">Precio del Producto</string>
+
 </resources>

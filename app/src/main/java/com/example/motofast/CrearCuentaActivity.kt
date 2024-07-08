@@ -51,6 +51,7 @@ class CrearCuentaActivity : AppCompatActivity() {
         firebaseAuth.createUserWithEmailAndPassword(email,password).addOnCompleteListener (this){ task->
             if (task.isSuccessful)
             {
+                sendEmailVerification()
                 Toast.makeText(baseContext, "Bienvenido a la familia", Toast.LENGTH_SHORT).show()
                 val i = Intent (this, InicioActivity::class.java)
                 startActivity(i)
@@ -58,6 +59,21 @@ class CrearCuentaActivity : AppCompatActivity() {
             else
             {
                 Toast.makeText(baseContext, "Algo Salió Mal, Error:" + task.exception, Toast.LENGTH_SHORT).show()
+            }
+
+        }
+    }
+    private fun sendEmailVerification()
+    {
+        val user = firebaseAuth.currentUser!!
+        user.sendEmailVerification().addOnCompleteListener(this){ taks ->
+            if (taks.isSuccessful)
+            {
+                Toast.makeText(baseContext,"Verificación de manera Exitosa", Toast.LENGTH_SHORT).show()
+            }
+            else
+            {
+                Toast.makeText(baseContext, "Algo Salió Mal, Error:" + taks.exception, Toast.LENGTH_SHORT).show()
             }
 
         }

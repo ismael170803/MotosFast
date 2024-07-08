@@ -50,13 +50,23 @@ class InicioActivity : AppCompatActivity() {
     private fun sign(email: String, password: String)
     {
         firebaseAuth.signInWithEmailAndPassword(email, password).addOnCompleteListener(this){ task ->
-            if (task.isSuccessful){
+            if (task.isSuccessful) {
                 val user = firebaseAuth.currentUser
-                Toast.makeText(baseContext, "inicio de Sesión Correcto",Toast.LENGTH_SHORT).show()
-                //aquí vamos a la segunda página
-                val i = Intent (this, MainActivity::class.java)
-                startActivity(i)
+                val verifica = user?.isEmailVerified
+                if (verifica == true) {
+                    Toast.makeText(baseContext, "inicio de Sesión Correcto", Toast.LENGTH_SHORT)
+                        .show()
+                    //aquí vamos a la segunda página
+                    val i = Intent(this, MainActivity::class.java)
+                    startActivity(i)
+                }
+                else
+                {
+
+                    Toast.makeText(baseContext,"Verifique su Correo Primero",Toast.LENGTH_SHORT).show()
+                }
             }
+
             else
             {
                 Toast.makeText(baseContext,"Error del Email y/o Contraseña",Toast.LENGTH_SHORT).show()
